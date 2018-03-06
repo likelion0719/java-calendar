@@ -23,11 +23,19 @@ public class calendar {
 		calendar.printSampleCalendar();
 		//숫자를 입력받아 해당하는 달의 최대 일수를 출력하는 프로그램
 		Scanner sc = new Scanner(System.in);
-		System.out.println("달을 입력하세요");
-		int month = sc.nextInt();
+		System.out.println("반복 횟수 입력하세요");
+		int num = sc.nextInt();
 		
+		int month[] = new int[num];
+		for(int i=0; i<num; i++) {
+			System.out.println("달을 입력하세요");
+			month[i] = sc.nextInt();
+		}
 		
-		System.out.printf("%d월은 %d일 까지 있습니다.\n",month,calendar.getMaxDaysOfMonth(month));
+		for(int i =0; i<num; i++) {
+			System.out.printf("%d월은 %d일까지 있습니다. ",month[i],calendar.getMaxDaysOfMonth(month[i]));
+		}
+	
 		sc.close();
 	}
 }
